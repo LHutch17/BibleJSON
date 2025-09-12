@@ -1,8 +1,11 @@
 # Bible-JSON
+
 The Bible in JSON format.
 
-## Structure:
+## Structure
+
 This is what it would look like if you were to open up `./JSON/Psalms/3.json`.
+
 ```json
 {
   "book_name": "Psalms",
@@ -20,17 +23,16 @@ This is what it would look like if you were to open up `./JSON/Psalms/3.json`.
   ]
 }
 ```
-`header` is a string of additional information about the chapter, such as "A Psalm of David" above a Psalm. I don't believe any chapters outside of the Psalms use this but I may be wrong.
 
-`footer` is a string additional information put at the end of a chapter. These are only used in the Pauline Epistles (also Hebrews, which may or may not have been written by Paul).
+`header` is a string of additional information about the chapter, such as "A Psalm of David" above a Psalm.
 
-**NOTE:** `header`s and `footer`s are still a work in progress.
+`footer` is a string additional information put at the end of a chapter.
 
-`verses` is an object array. Inside `verses` are object with these:
+`verses` is an object array. Inside `verses` are objects with these:
 
-- `book_id` is a string which is a short 3-letter abbreviation of the the chapter's book's name. This is good for calling an API maybe?
+- `book_id` is a 3-letter string abbreviation of the name of the chapter's book.
 - `book_name` is a sting containing the name of the book of which this chapter is from.
-- `chapter` is an integer which is also the chapter's number.
+- `chapter` is an integer which is the chapter number.
 - `verse` is an integer which is the verse number.
-- `text` is a string containing the text of the verse. You will find `<span style="color:red;">` and `</span>` wrapping around Jesus' words as well as `<em>` and `</em>` around italicized words.
-- `info` is a string that would go above the verse. This will only apply to Psalm 119.
+- `text` is a string containing the text of the verse. You will find `<i>` and `</i>` around italicized words.
+- `info` is a string that would go above the verse. This only applies to Psalm 119.
