@@ -2,6 +2,66 @@
 
 The Bible in JSON format.
 
+## How to Download
+
+There are several ways to download and use this repository:
+
+### Method 1: Download as ZIP
+
+1. Click the green "Code" button at the top of this repository
+2. Select "Download ZIP"
+3. Extract the ZIP file to your desired location
+4. The JSON files will be in the `JSON/` directory
+
+### Method 2: Clone with Git
+
+```bash
+git clone https://github.com/LHutch17/BibleJSON.git
+cd BibleJSON
+```
+
+### Method 3: Download Specific Files
+
+You can download individual book files directly from GitHub:
+- Navigate to `JSON/[Book Name]/[Chapter Number].json`
+- Click "Raw" to view the raw JSON
+- Right-click and "Save As" to download
+
+### Method 4: Programmatic Access
+
+You can access the JSON files programmatically via GitHub's raw content URL:
+
+```
+https://raw.githubusercontent.com/LHutch17/BibleJSON/main/JSON/[Book Name]/[Chapter Number].json
+```
+
+Example using JavaScript fetch:
+```javascript
+fetch('https://raw.githubusercontent.com/LHutch17/BibleJSON/main/JSON/Genesis/1.json')
+  .then(response => response.json())
+  .then(data => console.log(data));
+```
+
+Example using Python:
+```python
+import requests
+
+url = 'https://raw.githubusercontent.com/LHutch17/BibleJSON/main/JSON/Genesis/1.json'
+response = requests.get(url)
+data = response.json()
+print(data)
+```
+
+### Method 5: Create Your Own Archive
+
+If you've cloned the repository and want to create a compressed archive:
+
+```bash
+./create_archive.sh [output_directory]
+```
+
+This will create a timestamped tar.gz file containing all JSON files. If no output directory is specified, the archive will be created in the current directory.
+
 ## Structure
 
 This is what it would look like if you were to open up `./JSON/Psalms/3.json`.
